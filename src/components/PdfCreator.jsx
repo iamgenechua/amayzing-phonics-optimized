@@ -149,7 +149,7 @@ function PdfCreator() {
                             }
                         </View>
                     </Page>
-                    <Page size="A4" style={styles.page}>
+                    {vocabArray.length > 7 && <Page size="A4" style={styles.page}>
                         <View style={styles.section}>
                             {vocabArray &&
                                 vocabArray.map((item, index) => (
@@ -167,7 +167,8 @@ function PdfCreator() {
                                 ))
                             }
                         </View>
-                    </Page>
+                    </Page>}
+
                 </Document>
             </PDFViewer>
         </div>
