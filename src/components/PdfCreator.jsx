@@ -59,7 +59,7 @@ Jason ___ his head in agreement to the suggestion given. (1) shook (3) nodded (2
 Ruth was scared and ran around the dimly lit room, ___ searching for a way out. (1) calmly (3) desperately (2) generously (4) accidentally \n \
 The _ robbery arrived at the scene of the crime and began investigating the (1) culprit (3) suspect (2) witness (4) detective \n\n \
 You should output ONLY an array of objects like this: \
-[ {"question": "The children squealed in delight as they were ______ to go on a trip.", "opt1": "sad", "opt2": "bored", "opt3": "animated", "opt4": "excited"], \
+[{"question": "The children squealed in delight as they were ______ to go on a trip.", "opt1": "sad", "opt2": "bored", "opt3": "animated", "opt4": "excited"}, \
 {"question": "Peering through the distance, ______ I could identify the bird on that tree from a distance.", "opt1": "periscope", "opt2": "goggles", "opt3": "binoculars", "opt4": "microscope"}, \
 {"question": "Jason ______ his head in agreement to the suggestion given.", "opt1": "nodded", "opt2": "turned", "opt3": "shook", "opt4": "scratched"}, \
 {"question": "Ruth was scared and ran around the dimly lit room, ______ searching for a way out.", "opt1": "desperately", "opt2": "generously", "opt3": "calmly", "opt4": "accidentally"}, \
@@ -134,13 +134,36 @@ function PdfCreator() {
                         <View style={styles.section}>
                             {vocabArray &&
                                 vocabArray.map((item, index) => (
-                                    <VocabQuestion key={index}
-                                        question={item.question}
-                                        opt1={item['opt1']}
-                                        opt2={item['opt2']}
-                                        opt3={item['opt3']}
-                                        opt4={item['opt4']}
-                                        style={{marginBottom: '-10px'}}/>
+                                    index < 7 &&
+                                    <div>
+                                        <VocabQuestion
+                                            question={item.question}
+                                            opt1={item['opt1']}
+                                            opt2={item['opt2']}
+                                            opt3={item['opt3']}
+                                            opt4={item['opt4']}
+                                            idx={index}
+                                        />
+                                    </div>
+                                ))
+                            }
+                        </View>
+                    </Page>
+                    <Page size="A4" style={styles.page}>
+                        <View style={styles.section}>
+                            {vocabArray &&
+                                vocabArray.map((item, index) => (
+                                    index >= 7 &&
+                                    <div>
+                                        <VocabQuestion
+                                            question={item.question}
+                                            opt1={item['opt1']}
+                                            opt2={item['opt2']}
+                                            opt3={item['opt3']}
+                                            opt4={item['opt4']}
+                                            idx={index}
+                                        />
+                                    </div>
                                 ))
                             }
                         </View>

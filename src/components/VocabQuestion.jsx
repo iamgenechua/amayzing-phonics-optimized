@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     section: {
         margin: 4,
-        padding: 10,
+        padding: 8,
     },
     viewer: {
         width: window.innerWidth / 2,
@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-function VocabQuestion({question, opt1, opt2, opt3, opt4}) {
+function VocabQuestion({question, opt1, opt2, opt3, opt4, idx}) {
     return (
-        <View style={styles.section}>
+        <View style={styles.section} break={idx > 0 && idx % 6 == 0} wrap={false}>
             <Text>{question}</Text>
             <View style={styles.optionsContainer}>
                 <Text style={styles.optionsChild}>(1) {opt1}</Text>
