@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         color: "black",
     },
     section: {
-        margin: 10,
+        margin: 4,
         padding: 10,
     },
     viewer: {
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     optionsChild: {
         width: '48%',
-        marginTop: '8px'
+        marginTop: '2px'
     }
 });
 

@@ -139,7 +139,8 @@ function PdfCreator() {
                                         opt1={item['opt1']}
                                         opt2={item['opt2']}
                                         opt3={item['opt3']}
-                                        opt4={item['opt4']} />
+                                        opt4={item['opt4']}
+                                        style={{marginBottom: '-10px'}}/>
                                 ))
                             }
                         </View>
